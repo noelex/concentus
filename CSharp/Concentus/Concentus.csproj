@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFrameworks>netstandard1.1;netstandard2.1</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <DefineConstants>$(DefineConstants)TRACE;PARITY</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard1.1'">
     <PackageReference Include="System.Memory" Version="4.5.4" />
   </ItemGroup>
 
